@@ -1,0 +1,5 @@
+I:\Documents\05FizzBuzz\05FizzBuzz\bin\Debug\05FizzBuzz.exe.config
+I:\Documents\05FizzBuzz\05FizzBuzz\bin\Debug\05FizzBuzz.exe
+I:\Documents\05FizzBuzz\05FizzBuzz\bin\Debug\05FizzBuzz.pdb
+I:\Documents\05FizzBuzz\05FizzBuzz\obj\Debug\05FizzBuzz.exe
+I:\Documents\05FizzBuzz\05FizzBuzz\obj\Debug\05FizzBuzz.pdb

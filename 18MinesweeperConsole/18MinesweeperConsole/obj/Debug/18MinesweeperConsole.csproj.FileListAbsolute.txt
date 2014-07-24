@@ -1,0 +1,6 @@
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.exe.config
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.exe
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.pdb
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.exe
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.pdb
+I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+I:\Documents\13Magic8Ball\13Magic8Ball\bin\Debug\13Magic8Ball.exe.config
+I:\Documents\13Magic8Ball\13Magic8Ball\obj\Debug\13Magic8Ball.csprojResolveAssemblyReference.cache
+I:\Documents\13Magic8Ball\13Magic8Ball\bin\Debug\13Magic8Ball.exe
+I:\Documents\13Magic8Ball\13Magic8Ball\bin\Debug\13Magic8Ball.pdb
+I:\Documents\13Magic8Ball\13Magic8Ball\obj\Debug\13Magic8Ball.exe
+I:\Documents\13Magic8Ball\13Magic8Ball\obj\Debug\13Magic8Ball.pdb

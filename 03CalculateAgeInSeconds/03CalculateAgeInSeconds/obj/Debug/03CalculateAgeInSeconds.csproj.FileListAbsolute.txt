@@ -1,0 +1,6 @@
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\bin\Debug\03CalculateAgeInSeconds.exe.config
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\obj\Debug\03CalculateAgeInSeconds.csprojResolveAssemblyReference.cache
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\bin\Debug\03CalculateAgeInSeconds.exe
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\bin\Debug\03CalculateAgeInSeconds.pdb
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\obj\Debug\03CalculateAgeInSeconds.exe
+I:\Documents\03CalculateAgeInSeconds\03CalculateAgeInSeconds\obj\Debug\03CalculateAgeInSeconds.pdb

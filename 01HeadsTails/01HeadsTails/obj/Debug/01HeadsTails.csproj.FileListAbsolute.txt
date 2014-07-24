@@ -1,0 +1,5 @@
+I:\Documents\01HeadsTails\01HeadsTails\bin\Debug\01HeadsTails.exe.config
+I:\Documents\01HeadsTails\01HeadsTails\bin\Debug\01HeadsTails.exe
+I:\Documents\01HeadsTails\01HeadsTails\bin\Debug\01HeadsTails.pdb
+I:\Documents\01HeadsTails\01HeadsTails\obj\Debug\01HeadsTails.exe
+I:\Documents\01HeadsTails\01HeadsTails\obj\Debug\01HeadsTails.pdb

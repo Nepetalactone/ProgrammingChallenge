@@ -1,0 +1,6 @@
+I:\Documents\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.exe.config
+I:\Documents\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.csprojResolveAssemblyReference.cache
+I:\Documents\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.exe
+I:\Documents\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.pdb
+I:\Documents\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.exe
+I:\Documents\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.pdb

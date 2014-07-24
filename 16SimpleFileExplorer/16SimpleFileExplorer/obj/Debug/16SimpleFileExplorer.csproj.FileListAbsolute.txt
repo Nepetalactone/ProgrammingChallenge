@@ -1,0 +1,6 @@
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\bin\Debug\16SimpleFileExplorer.exe.config
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\bin\Debug\16SimpleFileExplorer.exe
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\bin\Debug\16SimpleFileExplorer.pdb
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\obj\Debug\16SimpleFileExplorer.exe
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\obj\Debug\16SimpleFileExplorer.pdb
+I:\Documents\16SimpleFileExplorer\16SimpleFileExplorer\obj\Debug\16SimpleFileExplorer.csprojResolveAssemblyReference.cache
