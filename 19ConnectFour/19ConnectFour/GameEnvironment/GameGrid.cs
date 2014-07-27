@@ -156,5 +156,17 @@ namespace _19ConnectFour.GameEnvironment
 
             return i - 1;
         }
+
+        public Boolean isFull()
+        {
+            foreach (SpaceState s in grid)
+            {
+                if (s == SpaceState.UNOCCUPIED)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

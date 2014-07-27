@@ -29,7 +29,7 @@ namespace _19ConnectFour.GameLogic
         {
             int input = gui.getUserInput();
 
-            while (gameGrid.addDiscToGridAndCheckForWin(input, currentPlayer) == false)
+            while ((!gameGrid.isFull()) && (gameGrid.addDiscToGridAndCheckForWin(input, currentPlayer) == false))
             {
                 gui.draw(gameGrid.Grid);
                 if (currentPlayer == PLAYER_1)
@@ -43,13 +43,20 @@ namespace _19ConnectFour.GameLogic
                 input = gui.getUserInput();
             }
 
-            if (currentPlayer == PLAYER_1)
+            if (gameGrid.isFull())
             {
-                Console.WriteLine("Player 1 won");
+                Console.WriteLine("Tie");
             }
             else
             {
-                Console.WriteLine("Player 2 won");
+                if (currentPlayer == PLAYER_1)
+                {
+                    Console.WriteLine("Player 1 won");
+                }
+                else
+                {
+                    Console.WriteLine("Player 2 won");
+                }
             }
             Console.ReadKey();
         }
