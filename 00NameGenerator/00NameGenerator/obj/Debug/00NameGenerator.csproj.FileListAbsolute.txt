@@ -4,3 +4,9 @@ I:\Documents\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.pdb
 I:\Documents\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.csprojResolveAssemblyReference.cache
 I:\Documents\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.exe
 I:\Documents\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.pdb
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.exe.config
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.exe
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.pdb
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.exe
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.pdb
+I:\Documents\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.csprojResolveAssemblyReference.cache

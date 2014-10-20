@@ -8,45 +8,59 @@ namespace _00NameGenerator
 {
     class Program
     {
-        private static char[] vowels = new char[5] { 'a', 'e', 'i', 'o', 'u' };
-        private static string[] diphtongs = new string[5] { "ai", "au", "eu", "ei", "ui" };
-        private static char[] consonants = new char[21] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
-        private static Random rng = new Random();
+        private static readonly char[] Vowels = new char[5] { 'a', 'e', 'i', 'o', 'u' };
+        private static readonly string[] Diphtongs = new string[5] { "ai", "au", "eu", "ei", "ui" };
+        private static readonly char[] Consonants = new char[21] { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
+        private static readonly Random Rng = new Random();
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            int numOfParts = rng.Next(3, 10);
-            int poolChoice = rng.Next(0, 3);
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(GenerateName() + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+        }
+
+        private static String GenerateName()
+        {
+            int numOfParts = Rng.Next(3, 10);
+            int poolChoice = Rng.Next(0, 6);
             StringBuilder generatedName = new StringBuilder();
 
             //Appends an entry from the appropriate letter pool and afterwards changes the pool to choose from 
             for (int i = 0; i < numOfParts; i++)
             {
                 int letterChoice;
-                switch (poolChoice) 
+                switch (poolChoice)
                 {
                     case 0:
-                        letterChoice = rng.Next(0, 5);
-                        generatedName.Append(vowels[letterChoice]);
+                        letterChoice = Rng.Next(0, 5);
+                        generatedName.Append(Vowels[letterChoice]);
                         poolChoice = 2;
                         break;
 
                     case 1:
-                        letterChoice = rng.Next(0, 5);
-                        generatedName.Append(diphtongs[letterChoice]);
+                        letterChoice = Rng.Next(0, 5);
+                        generatedName.Append(Diphtongs[letterChoice]);
                         poolChoice = 2;
                         break;
-
+                    //Give consonants a higher chance to appear
                     case 2:
-                        letterChoice = rng.Next(0, 21);
-                        generatedName.Append(consonants[letterChoice]);
-                        poolChoice = rng.Next(0, 2);
+                    case 3:
+                    case 4:
+                    case 5:
+                        letterChoice = Rng.Next(0, 21);
+                        generatedName.Append(Consonants[letterChoice]);
+                        poolChoice = Rng.Next(0, 2);
                         break;
                 }
             }
 
-            Console.WriteLine(generatedName);
-            Console.ReadKey();
+            generatedName[0] = Char.ToUpper(generatedName[0]);
+
+            return generatedName.ToString();
         }
     }
 }
