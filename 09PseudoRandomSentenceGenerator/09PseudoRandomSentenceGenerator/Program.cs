@@ -11,8 +11,16 @@ namespace _09PseudoRandomSentenceGenerator
     {
         static void Main(string[] args)
         {
-            WebClient client = new WebClient();
-            String[] text = new WebClient().DownloadString(@"http://www.gutenberg.org/ebooks/45862.txt.utf-8").Replace('.', ' ').Replace(',', ' ').Replace("  ", " ").Split(' ');
+            String[] text;
+            using (WebClient client = new WebClient())
+            {
+                text =
+                    new WebClient().DownloadString(@"http://www.gutenberg.org/ebooks/45862.txt.utf-8")
+                        .Replace('.', ' ')
+                        .Replace(',', ' ')
+                        .Replace("  ", " ")
+                        .Split(' ');
+            }
             Dictionary<Tuple<String, String>, List<String>> dict = new Dictionary<Tuple<string,string>, List<string>>();
             for (int i = 0; i < text.Length - 2; i++)
             {

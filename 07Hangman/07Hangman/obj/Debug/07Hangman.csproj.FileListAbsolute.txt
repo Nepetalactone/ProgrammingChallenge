@@ -4,3 +4,9 @@ I:\Documents\07Hangman\07Hangman\bin\Debug\07Hangman.pdb
 I:\Documents\07Hangman\07Hangman\obj\Debug\07Hangman.csprojResolveAssemblyReference.cache
 I:\Documents\07Hangman\07Hangman\obj\Debug\07Hangman.exe
 I:\Documents\07Hangman\07Hangman\obj\Debug\07Hangman.pdb
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\bin\Debug\07Hangman.exe.config
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\obj\Debug\07Hangman.exe
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\obj\Debug\07Hangman.pdb
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\bin\Debug\07Hangman.exe
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\bin\Debug\07Hangman.pdb
+K:\Git\ProgrammingChallenge\07Hangman\07Hangman\obj\Debug\07Hangman.csprojResolveAssemblyReference.cache

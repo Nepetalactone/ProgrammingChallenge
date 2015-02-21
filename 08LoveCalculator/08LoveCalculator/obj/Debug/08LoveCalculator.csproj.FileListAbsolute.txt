@@ -4,3 +4,6 @@ I:\Documents\08LoveCalculator\08LoveCalculator\bin\Debug\08LoveCalculator.pdb
 I:\Documents\08LoveCalculator\08LoveCalculator\obj\Debug\08LoveCalculator.csprojResolveAssemblyReference.cache
 I:\Documents\08LoveCalculator\08LoveCalculator\obj\Debug\08LoveCalculator.exe
 I:\Documents\08LoveCalculator\08LoveCalculator\obj\Debug\08LoveCalculator.pdb
+K:\Git\ProgrammingChallenge\08LoveCalculator\08LoveCalculator\bin\Debug\08LoveCalculator.exe.config
+K:\Git\ProgrammingChallenge\08LoveCalculator\08LoveCalculator\obj\Debug\08LoveCalculator.exe
+K:\Git\ProgrammingChallenge\08LoveCalculator\08LoveCalculator\obj\Debug\08LoveCalculator.pdb
