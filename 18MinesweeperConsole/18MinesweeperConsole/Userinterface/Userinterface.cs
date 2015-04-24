@@ -1,12 +1,16 @@
-﻿using _18MinesweeperConsole.Enums;
+﻿using System;
+using _18MinesweeperConsole.Enums;
 using _18MinesweeperConsole.GameEnvironment;
+using _18MinesweeperConsole.Gamelogic;
 
 namespace _18MinesweeperConsole.Userinterface
 {
-    interface Userinterface
+    internal abstract class Userinterface
     {
-        Command getUserInput(ref int x, ref int y);
-        void draw(Field[,] matrix);
-        void showResult(GameState state);
+        public abstract Command GetUserInput(ref int x, ref int y);
+        public abstract void Draw(Field[,] matrix);
+        public abstract void ShowResult(GameState state);
+        public abstract String GetDifficulty();
+        public Difficulty GameDifficulty { get; set; }
     }
 }

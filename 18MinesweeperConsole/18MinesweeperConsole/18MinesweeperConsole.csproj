@@ -46,6 +46,10 @@
     <Compile Include="Enums\GameState.cs" />
     <Compile Include="GameEnvironment\Field.cs" />
     <Compile Include="GameEnvironment\Map.cs" />
+    <Compile Include="Gamelogic\Difficulty.cs" />
+    <Compile Include="Gamelogic\DifficultyEasy.cs" />
+    <Compile Include="Gamelogic\DifficultyHard.cs" />
+    <Compile Include="Gamelogic\DifficultyNormal.cs" />
     <Compile Include="Gamelogic\Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

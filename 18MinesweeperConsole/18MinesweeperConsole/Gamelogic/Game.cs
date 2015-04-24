@@ -7,41 +7,52 @@ namespace _18MinesweeperConsole.Gamelogic
 {
     class Game
     {
-        private Map map;
-        private Userinterface.Userinterface userinterface;
-        private GameState state;
+        private Map _map;
+        private readonly Userinterface.Userinterface _userinterface;
+        private GameState _state;
 
         public Game()
         {
-            map = new Map();
-            userinterface = new ConsoleInterface();
-            state = GameState.UNDECIDED;
+            _userinterface = new ConsoleInterface();
+            _state = GameState.Undecided;
         }
 
-        public void gameLoop()
+        public void GameLoop()
         {
-            while (state == GameState.UNDECIDED)
+            switch (_userinterface.GetDifficulty())
+            {
+                case "hard":
+                    _map = new Map(new DifficultyHard());
+                    _userinterface.GameDifficulty = new DifficultyHard();
+                    break;
+                case "normal":
+                    _map = new Map(new DifficultyNormal());
+                    _userinterface.GameDifficulty = new DifficultyNormal();
+                    break;
+                case "easy":
+                    _map = new Map(new DifficultyEasy());
+                    _userinterface.GameDifficulty = new DifficultyEasy();
+                    break;
+            }
+            while (_state == GameState.Undecided)
             {
                 int x = 0;
                 int y = 0;
 
-                switch (userinterface.getUserInput(ref x, ref y))
+                switch (_userinterface.GetUserInput(ref x, ref y))
                 {
-                    case Command.MARK:
-                        state = map.toggleMark(new Tuple<int, int>(x, y));
+                    case Command.Mark:
+                        _state = _map.ToggleMark(new Tuple<int, int>(x, y));
                         break;
 
-                    case Command.UNCOVER:
-                        state = map.uncoverField(new Tuple<int, int>(x, y));
-                        break;
-
-                    default:
+                    case Command.Uncover:
+                        _state = _map.UncoverField(new Tuple<int, int>(x, y));
                         break;
                 }
-                userinterface.draw(map.Gamemap);
+                _userinterface.Draw(_map.Gamemap);
             }
 
-            userinterface.showResult(state);
+            _userinterface.ShowResult(_state);
             Console.ReadLine();
         }
     }

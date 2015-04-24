@@ -4,3 +4,9 @@ I:\Documents\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperCo
 I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.exe
 I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.pdb
 I:\Documents\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.csprojResolveAssemblyReference.cache
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.exe.config
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.exe
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.pdb
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.exe
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\bin\Debug\18MinesweeperConsole.pdb
+K:\Git\ProgrammingChallenge\18MinesweeperConsole\18MinesweeperConsole\obj\Debug\18MinesweeperConsole.csprojResolveAssemblyReference.cache

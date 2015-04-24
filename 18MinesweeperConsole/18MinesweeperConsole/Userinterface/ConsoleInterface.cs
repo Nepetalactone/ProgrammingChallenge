@@ -5,89 +5,114 @@ namespace _18MinesweeperConsole.Userinterface
 {
     class ConsoleInterface : Userinterface
     {
-        public Command getUserInput(ref int x, ref int y)
+        public override Command GetUserInput(ref int x, ref int y)
         {
             Console.WriteLine("Enter a command and two numbers for a coordinate");
-            String[] input = removeExtraSpaces(Console.ReadLine()).Split(' ');
-            while ((input.Length != 3) || (!isCommandRecognized(input[0])) || (!Int32.TryParse(input[1], out x)) || (!Int32.TryParse(input[2], out y)))
+            String[] input = RemoveExtraSpaces(Console.ReadLine()).Split(' ');
+            while ((input.Length != 3) || (!IsCommandRecognized(input[0])) || (!Int32.TryParse(input[1], out x)) || (!Int32.TryParse(input[2], out y)))
             {
                 Console.WriteLine("Enter a command and two numbers for a coordinate");
-                input = removeExtraSpaces(Console.ReadLine()).Split(' ');
+                input = RemoveExtraSpaces(Console.ReadLine()).Split(' ');
             }
 
             if (input[0] == "mark")
             {
-                return Command.MARK;
+                return Command.Mark;
             }
 
-            return Command.UNCOVER;
+            return Command.Uncover;
         }
 
-        private Boolean isCommandRecognized(String command)
+        private Boolean IsCommandRecognized(String command)
         {
-            if ((command == "mark") || (command == "uncover"))
+            if ((command.ToLower() == "mark") || (command.ToLower() == "uncover"))
             {
                 return true;
             }
             return false;
         }
 
-        public void draw(GameEnvironment.Field[,] matrix)
+        public override void Draw(GameEnvironment.Field[,] matrix)
         {
-            int i = 0;
-            int j = 0;
-
-            while (j < 9)
+            Console.Clear();
+            if (GameDifficulty.Width < 10)
             {
-                if (matrix[j, i].state == Fieldstate.COVERED)
+                Console.Write("   ");
+            }
+            else
+            {
+                Console.Write("    ");
+            }
+            for (int i = 0; i < GameDifficulty.Height; i++)
+            {
+                Console.Write(i + " ");
+            }
+            Console.Write(Environment.NewLine);
+            for (int x = 0; x < GameDifficulty.Width; x++)
+            {
+                for (int y = 0; y < GameDifficulty.Height; y++)
                 {
-                    Console.Write(" |");
+                    if (y == 0)
+                    {
+                        if (x < 10)
+                        {
+                            Console.Write("0" + x + "  ");
+                        }
+                        else
+                        {
+                            Console.Write(x + "  ");
+                        }
+                    }
+                    if (matrix[x, y].State == Fieldstate.Covered)
+                    {
+                        Console.Write(" |");
+                    }
+                    else if (matrix[x, y].State == Fieldstate.Marked)
+                    {
+                        Console.Write("X|");
+                    }
+                    else
+                    {
+                        Console.Write(matrix[x, y].SurroundingMineCount + "|");
+                    }
                 }
-                else if (matrix[j, i].state == Fieldstate.MARKED)
-                {
-                    Console.Write("X|");
-                }
-                else
-                {
-                    Console.Write(matrix[j, i].surroundingMineCount + "|");
-                }
-
-                if (i == 8)
-                {
-                    Console.WriteLine(Environment.NewLine);
-                    //Console.Write("------------------");
-                    //Console.WriteLine(Environment.NewLine);
-
-                    j++;
-                    i = 0;
-                }
-                else
-                {
-                    i++;
-                }
+                Console.Write(Environment.NewLine);
             }
         }
 
 
-        public void showResult(GameState state)
+        public override void ShowResult(GameState state)
         {
-            if (state == GameState.LOSS)
+            if (state == GameState.Loss)
             {
                 Console.WriteLine("You lost");
             }
-            else if (state == GameState.WIN)
+            else if (state == GameState.Win)
             {
                 Console.WriteLine("You won");
             }
         }
 
-        private String removeExtraSpaces(String input)
+        private String RemoveExtraSpaces(String input)
         {
             while (input.Contains("  "))
             {
                 input = input.Replace("  ", " ");
             }
             return input;
+        }
+
+        public override string GetDifficulty()
+        {
+            String difficulty = "undefined";
+
+            while (!difficulty.Equals("easy") && !difficulty.Equals("normal") && !difficulty.Equals("hard"))
+            {
+                Console.WriteLine("Choose a difficulty: easy, normal or hard");
+                difficulty = Console.ReadLine();
+                Console.Clear();
+            }
+            return difficulty;
         }
     }
 }

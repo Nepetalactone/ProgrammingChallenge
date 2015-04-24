@@ -11,7 +11,7 @@ namespace _18MinesweeperConsole
         static void Main(string[] args)
         {
             Gamelogic.Game game = new Gamelogic.Game();
-            game.gameLoop();
+            game.GameLoop();
         }
     }
 }

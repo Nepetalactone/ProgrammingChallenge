@@ -5,14 +5,14 @@ namespace _18MinesweeperConsole.GameEnvironment
 {
     class Field
     {
-        public int surroundingMineCount { get; set; }
-        public Boolean hasMine { get; set; }
-        public Fieldstate state { get; set; }
+        public int SurroundingMineCount { get; set; }
+        public Boolean HasMine { get; set; }
+        public Fieldstate State { get; set; }
 
         public Field()
         {
-            hasMine = false;
-            state = Fieldstate.COVERED;
+            HasMine = false;
+            State = Fieldstate.Covered;
         }
     }
 }

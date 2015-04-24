@@ -2,122 +2,124 @@
 using System.Collections.Generic;
 using System.Threading;
 using _18MinesweeperConsole.Enums;
+using _18MinesweeperConsole.Gamelogic;
 
 namespace _18MinesweeperConsole.GameEnvironment
 {
     class Map
     {
-
-        private static readonly int AMOUNT_MINES = 8;
+        private readonly int _amountMines = 8;
+        private int _markedMines = 0;
 
         public Field[,] Gamemap
         {
-            get { return gamemap; }
+            get { return _gamemap; }
         }
-        private Field[,] gamemap;
-        private Boolean isInitialized;
-        private int markCounter;
+        private readonly Field[,] _gamemap;
+        private Boolean _isInitialized;
+        private int _markCounter;
+        private readonly Difficulty _difficulty;
 
-        public Map()
+        public Map(Difficulty difficulty)
         {
-            gamemap = new Field[9, 9];
-            markCounter = AMOUNT_MINES;
-            isInitialized = false;
+            _difficulty = difficulty;
+            _gamemap = new Field[_difficulty.Width, _difficulty.Height];
+            _amountMines = _difficulty.Mines;
+            _markCounter = _amountMines;
+            _isInitialized = false;
         }
 
-        public GameState uncoverField(Tuple<int, int> coordinate)
+        public GameState UncoverField(Tuple<int, int> coordinate)
         {
-            if (!isInitialized)
+            if (!_isInitialized)
             {
-                initializeMap(coordinate);
-                isInitialized = true;
+                InitializeMap(coordinate);
+                _isInitialized = true;
             }
 
-            if (gamemap[coordinate.Item1, coordinate.Item2].hasMine)
+            if (_gamemap[coordinate.Item1, coordinate.Item2].HasMine)
             {
-                return GameState.LOSS;
+                return GameState.Loss;
             }
             else
             {
-                if (gamemap[coordinate.Item1, coordinate.Item2].state == Fieldstate.MARKED)
+                if (_gamemap[coordinate.Item1, coordinate.Item2].State == Fieldstate.Marked)
                 {
-                    toggleMark(new Tuple<int, int>(coordinate.Item1, coordinate.Item2));
+                    ToggleMark(new Tuple<int, int>(coordinate.Item1, coordinate.Item2));
                 }
-                gamemap[coordinate.Item1, coordinate.Item2].state = Fieldstate.UNCOVERED;
-                if (gamemap[coordinate.Item1, coordinate.Item2].surroundingMineCount == 0)
+                _gamemap[coordinate.Item1, coordinate.Item2].State = Fieldstate.Uncovered;
+                if (_gamemap[coordinate.Item1, coordinate.Item2].SurroundingMineCount == 0)
                 {
-                    uncoverEmptyNeighbours(coordinate);
+                    UncoverEmptyNeighbours(coordinate);
                 }
-                return GameState.UNDECIDED;
+                return GameState.Undecided;
             }
         }
 
-        public GameState toggleMark(Tuple<int, int> coordinate)
+        public GameState ToggleMark(Tuple<int, int> coordinate)
         {
-            if (gamemap[coordinate.Item1, coordinate.Item2].state == Fieldstate.MARKED)
+            if (_gamemap[coordinate.Item1, coordinate.Item2].State == Fieldstate.Marked)
             {
-                gamemap[coordinate.Item1, coordinate.Item2].state = Fieldstate.COVERED;
-                markCounter++;
-                return GameState.UNDECIDED;
-            }
-            else if (gamemap[coordinate.Item1, coordinate.Item2].state == Fieldstate.COVERED)
-            {
-                if (markCounter > 0)
+                _gamemap[coordinate.Item1, coordinate.Item2].State = Fieldstate.Covered;
+                _markCounter++;
+                if (_gamemap[coordinate.Item1, coordinate.Item2].HasMine)
                 {
-                    gamemap[coordinate.Item1, coordinate.Item2].state = Fieldstate.MARKED;
-                    if (areAllMinesMarked())
+                    _markedMines--;
+                }
+                return GameState.Undecided;
+            }
+            else if (_gamemap[coordinate.Item1, coordinate.Item2].State == Fieldstate.Covered)
+            {
+                if (_markCounter > 0)
+                {
+                    _gamemap[coordinate.Item1, coordinate.Item2].State = Fieldstate.Marked;
+                    if (_gamemap[coordinate.Item1, coordinate.Item2].HasMine)
                     {
-                        return GameState.WIN;
+                        _markedMines++;
+                    }
+                    if (AllMinesMarked())
+                    {
+                        return GameState.Win;
                     }
                 }
             }
-            return GameState.UNDECIDED;
+            return GameState.Undecided;
         }
 
-        private void initializeMap(Tuple<int, int> coordinate)
+        private void InitializeMap(Tuple<int, int> coordinate)
         {
-            int i = 0;
-            int j = 0;
-
-            while (j < 9)
+            for (int x = 0; x < _difficulty.Width; x++)
             {
-                gamemap[j, i] = new Field();
-
-                if (i == 8)
+                for (int y = 0; y < _difficulty.Height; y++)
                 {
-                    j++;
-                    i = 0;
-                }
-                else
-                {
-                    i++;
+                    _gamemap[x, y] = new Field();
                 }
             }
 
-            foreach (Tuple<int, int> mineField in generateMines(coordinate))
+            foreach (var mineField in GenerateMines(coordinate))
             {
-                gamemap[mineField.Item1, mineField.Item2].hasMine = true;
-                foreach (Tuple<int, int> mineNeighbour in getNeighbours(mineField))
+                _gamemap[mineField.Item1, mineField.Item2].HasMine = true;
+                foreach (var mineNeighbour in GetNeighbours(mineField))
                 {
-                    gamemap[mineNeighbour.Item1, mineNeighbour.Item2].surroundingMineCount++;
+                    _gamemap[mineNeighbour.Item1, mineNeighbour.Item2].SurroundingMineCount++;
                 }
             }
         }
 
-        private List<Tuple<int, int>> generateMines(Tuple<int, int> coordinate)
+        private IEnumerable<Tuple<int, int>> GenerateMines(Tuple<int, int> coordinate)
         {
             Random rng = new Random();
-            List<Tuple<int, int>> mines = new List<Tuple<int, int>>();
+            var mines = new List<Tuple<int, int>>();
             int i = 0;
 
-            while (i <= AMOUNT_MINES)
+            while (i <= _amountMines)
             {
-                int x = rng.Next(9);
+                int x = rng.Next(_difficulty.Width);
                 Thread.Sleep(10);
-                int y = rng.Next(9);
-                Tuple<int, int> potentialMine = new Tuple<int, int>(x, y);
+                int y = rng.Next(_difficulty.Height);
+                var potentialMine = new Tuple<int, int>(x, y);
 
-                if (!areNeighbours(coordinate, potentialMine) && (!coordinate.Equals(potentialMine)))
+                if (!AreNeighbours(coordinate, potentialMine) && (!coordinate.Equals(potentialMine)))
                 {
                     mines.Add(potentialMine);
                     i++;
@@ -126,81 +128,56 @@ namespace _18MinesweeperConsole.GameEnvironment
             return mines;
         }
 
-        private Boolean areNeighbours(Tuple<int, int> first, Tuple<int, int> second)
+        private Boolean AreNeighbours(Tuple<int, int> first, Tuple<int, int> second)
         {
-            if ((isInNeighbourRange(first.Item1, second.Item1) && (isInNeighbourRange(first.Item2, second.Item2)) && (!first.Equals(second))))
-            {
-                return true;
-            }
-            return false;
+            return IsInNeighbourRange(first.Item1, second.Item1) && (IsInNeighbourRange(first.Item2, second.Item2)) &&
+                   (!first.Equals(second));
         }
 
-        private Boolean isInNeighbourRange(int first, int second)
+        private static Boolean IsInNeighbourRange(int first, int second)
         {
             return (((first - second) <= 1) && ((first - second) >= -1));
         }
 
-        private List<Tuple<int, int>> getNeighbours(Tuple<int, int> coordinate) //Lazy
+        private IEnumerable<Tuple<int, int>> GetNeighbours(Tuple<int, int> coordinate) //Lazy
         {
-            List<Tuple<int, int>> neighbours = new List<Tuple<int, int>>();
+            var neighbours = new List<Tuple<int, int>>();
 
-            int i = 0;
-            int j = 0;
-
-            while (j < 9)
+            for (int x = 0; x < _difficulty.Width; x++)
             {
-                Tuple<int, int> potentialNeighbour = new Tuple<int, int>(i, j);
-                if (areNeighbours(coordinate, potentialNeighbour))
+                for (int y = 0; y < _difficulty.Height; y++)
                 {
-                    neighbours.Add(potentialNeighbour);
-                }
-
-                if (i == 8)
-                {
-                    j++;
-                    i = 0;
-                }
-                else
-                {
-                    i++;
+                    var potentialNeighbour = new Tuple<int, int>(x, y);
+                    if (AreNeighbours(coordinate, potentialNeighbour))
+                    {
+                        neighbours.Add(potentialNeighbour);
+                    }
                 }
             }
-
             return neighbours;
         }
 
-        private void uncoverEmptyNeighbours(Tuple<int, int> coordinate)
+        private void UncoverEmptyNeighbours(Tuple<int, int> coordinate)
         {
-            foreach (Tuple<int, int> potentialEmptyNeighbour in getNeighbours(coordinate))
+            foreach (Tuple<int, int> potentialEmptyNeighbour in GetNeighbours(coordinate))
             {
-                if ((gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].surroundingMineCount == 0) && (gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].hasMine == false) && (gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].state == Fieldstate.COVERED))
+                if ((_gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].SurroundingMineCount == 0) && 
+                    (_gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].HasMine == false) && 
+                    (_gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].State == Fieldstate.Covered))
                 {
-                    gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].state = Fieldstate.UNCOVERED;
-                    uncoverEmptyNeighbours(potentialEmptyNeighbour);
+                    _gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].State = Fieldstate.Uncovered;
+                    UncoverEmptyNeighbours(potentialEmptyNeighbour);
                 }
-                else if ((gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].hasMine == false) && (gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].state == Fieldstate.COVERED))
+                else if ((_gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].HasMine == false) && (_gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].State == Fieldstate.Covered))
                 {
-                    gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].state = Fieldstate.UNCOVERED;
+                    _gamemap[potentialEmptyNeighbour.Item1, potentialEmptyNeighbour.Item2].State = Fieldstate.Uncovered;
                 }
             }
         }
 
-        private Boolean areAllMinesMarked()
+        private Boolean AllMinesMarked()
         {
-            int i = 0;
-            foreach (Field f in gamemap)
-            {
-                if ((f.hasMine == true) && (f.state == Fieldstate.MARKED))
-                {
-                    i++;
-                }
-            }
-
-            if (i == 8)
-            {
-                return true;
-            }
-            return false;
+            return _amountMines == _markedMines;
         }
     }
 }
