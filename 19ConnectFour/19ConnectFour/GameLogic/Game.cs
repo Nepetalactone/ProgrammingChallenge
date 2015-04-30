@@ -35,6 +35,8 @@ namespace _19ConnectFour.GameLogic
 
             if (_gameGrid.IsFull())
             {
+                Console.Clear();
+                _gui.Draw(_gameGrid.Grid);
                 Console.WriteLine("Tie");
             }
             else
