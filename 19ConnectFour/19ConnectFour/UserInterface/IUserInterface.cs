@@ -1,4 +1,5 @@
-﻿using _19ConnectFour.Enums;
+﻿using System;
+using _19ConnectFour.Enums;
 
 namespace _19ConnectFour.UserInterface
 {
@@ -6,5 +7,7 @@ namespace _19ConnectFour.UserInterface
     {
         int GetUserInput();
         void Draw(SpaceState[,] state);
+        void Tie();
+        void Win(String winner);
     }
 }

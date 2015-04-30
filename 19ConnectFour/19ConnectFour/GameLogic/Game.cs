@@ -35,23 +35,20 @@ namespace _19ConnectFour.GameLogic
 
             if (_gameGrid.IsFull())
             {
-                Console.Clear();
                 _gui.Draw(_gameGrid.Grid);
-                Console.WriteLine("Tie");
+                _gui.Tie();
             }
             else
             {
                 if (_currentPlayer == PlayerOne)
                 {
-                    Console.Clear();
                     _gui.Draw(_gameGrid.Grid);
-                    Console.WriteLine("Player 1 won");
+                    _gui.Win("Player 1");
                 }
                 else
                 {
-                    Console.Clear();
                     _gui.Draw(_gameGrid.Grid);
-                    Console.WriteLine("Player 2 won");
+                    _gui.Win("Player 2);");
                 }
             }
             Console.ReadKey();

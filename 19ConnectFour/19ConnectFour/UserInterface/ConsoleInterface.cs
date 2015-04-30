@@ -58,5 +58,15 @@ namespace _19ConnectFour.UserInterface
 
             return x;
         }
+
+        public void Tie()
+        {
+            Console.WriteLine("Tie");
+        }
+
+        public void Win(String player)
+        {
+            Console.WriteLine(player + " won");
+        }
     }
 }
