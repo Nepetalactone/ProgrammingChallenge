@@ -23,6 +23,7 @@ namespace _19ConnectFour.GameLogic
 
         public void GameLoop()
         {
+            _gui.Draw(_gameGrid.Grid);
             int input = _gui.GetUserInput();
 
             while ((!_gameGrid.IsFull()) && (_gameGrid.AddDiscToGridAndCheckForWin(input, _currentPlayer) == false))
@@ -40,10 +41,14 @@ namespace _19ConnectFour.GameLogic
             {
                 if (_currentPlayer == PlayerOne)
                 {
+                    Console.Clear();
+                    _gui.Draw(_gameGrid.Grid);
                     Console.WriteLine("Player 1 won");
                 }
                 else
                 {
+                    Console.Clear();
+                    _gui.Draw(_gameGrid.Grid);
                     Console.WriteLine("Player 2 won");
                 }
             }

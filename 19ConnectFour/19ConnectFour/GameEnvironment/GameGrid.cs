@@ -136,7 +136,7 @@ namespace _19ConnectFour.GameEnvironment
                     break;
             }
 
-            return i - 1;
+            return i == 0 ? i : i - 1;
         }
 
         public Boolean IsFull()
