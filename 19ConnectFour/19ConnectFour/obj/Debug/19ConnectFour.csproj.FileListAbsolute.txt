@@ -10,3 +10,9 @@ I:\Documents\ProgrammingChallenge\19ConnectFour\19ConnectFour\obj\Debug\19Connec
 I:\Documents\ProgrammingChallenge\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.exe
 I:\Documents\ProgrammingChallenge\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.pdb
 I:\Documents\ProgrammingChallenge\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.csprojResolveAssemblyReference.cache
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.exe.config
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.exe
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.pdb
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.exe
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\bin\Debug\19ConnectFour.pdb
+K:\Git\ProgrammingChallenge\19ConnectFour\19ConnectFour\obj\Debug\19ConnectFour.csprojResolveAssemblyReference.cache

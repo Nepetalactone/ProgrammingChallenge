@@ -1,30 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _19ConnectFour.Enums;
 
 
 namespace _19ConnectFour.UserInterface
 {
-    class ConsoleInterface : UserInterface
+    class ConsoleInterface : IUserInterface
     {
-        private static readonly int MAX_GRID_ROWS = 6;
-        private static readonly int MAX_GRID_COLUMNS = 7;
+        private const int MaxGridRows = 6;
+        private const int MaxGridColumns = 7;
 
-        public void draw(SpaceState[,] state)
+        public void Draw(SpaceState[,] state)
         {
             int i = 0;
-            int j = MAX_GRID_ROWS - 1;
+            int j = MaxGridRows - 1;
 
+            Console.Clear();
             while (j >= 0)
             {
-                if (state[i, j] == SpaceState.RED)
+                if (state[i, j] == SpaceState.Red)
                 {
                     Console.Write("O|");
                 }
-                else if (state[i, j] == SpaceState.YELLOW)
+                else if (state[i, j] == SpaceState.Yellow)
                 {
                     Console.Write("X|");
                 }
@@ -33,7 +30,7 @@ namespace _19ConnectFour.UserInterface
                     Console.Write(" |");
                 }
 
-                if (i == MAX_GRID_COLUMNS - 1)
+                if (i == MaxGridColumns - 1)
                 {
                     j--;
                     i = 0;
@@ -46,14 +43,14 @@ namespace _19ConnectFour.UserInterface
             }
         }
 
-        public int getUserInput()
+        public int GetUserInput()
         {
             Console.WriteLine("Enter a column number to add a disc");
 
-            int x = 0;
+            int x;
             String input = Console.ReadLine();
 
-            while (!Int32.TryParse(input, out x) || (x < 0) || (x > MAX_GRID_COLUMNS - 1))
+            while (!Int32.TryParse(input, out x) || (x < 0) || (x > MaxGridColumns - 1))
             {
                 Console.WriteLine("Enter a VALID column number to add a disc");
                 input = Console.ReadLine();

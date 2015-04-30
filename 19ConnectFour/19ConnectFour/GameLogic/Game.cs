@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _19ConnectFour.GameEnvironment;
 using _19ConnectFour.UserInterface;
 using _19ConnectFour.Enums;
@@ -11,45 +7,38 @@ namespace _19ConnectFour.GameLogic
 {
     class Game
     {
-        private static readonly SpaceState PLAYER_1 = SpaceState.RED;
-        private static readonly SpaceState PLAYER_2 = SpaceState.YELLOW;
+        private const SpaceState PlayerOne = SpaceState.Red;
+        private const SpaceState PlayerTwo = SpaceState.Yellow;
 
-        private GameGrid gameGrid;
-        private UserInterface.UserInterface gui;
-        private SpaceState currentPlayer;
+        private readonly GameGrid _gameGrid;
+        private readonly UserInterface.IUserInterface _gui;
+        private SpaceState _currentPlayer;
 
         public Game()
         {
-            this.gameGrid = new GameGrid();
-            this.gui = new ConsoleInterface();
-            currentPlayer = PLAYER_1;
+            _gameGrid = new GameGrid();
+            _gui = new ConsoleInterface();
+            _currentPlayer = PlayerOne;
         }
 
-        public void gameLoop()
+        public void GameLoop()
         {
-            int input = gui.getUserInput();
+            int input = _gui.GetUserInput();
 
-            while ((!gameGrid.isFull()) && (gameGrid.addDiscToGridAndCheckForWin(input, currentPlayer) == false))
+            while ((!_gameGrid.IsFull()) && (_gameGrid.AddDiscToGridAndCheckForWin(input, _currentPlayer) == false))
             {
-                gui.draw(gameGrid.Grid);
-                if (currentPlayer == PLAYER_1)
-                {
-                    currentPlayer = PLAYER_2;
-                }
-                else
-                {
-                    currentPlayer = PLAYER_1;
-                }
-                input = gui.getUserInput();
+                _gui.Draw(_gameGrid.Grid);
+                _currentPlayer = (_currentPlayer == PlayerOne) ? PlayerTwo : PlayerOne;
+                input = _gui.GetUserInput();
             }
 
-            if (gameGrid.isFull())
+            if (_gameGrid.IsFull())
             {
                 Console.WriteLine("Tie");
             }
             else
             {
-                if (currentPlayer == PLAYER_1)
+                if (_currentPlayer == PlayerOne)
                 {
                     Console.WriteLine("Player 1 won");
                 }

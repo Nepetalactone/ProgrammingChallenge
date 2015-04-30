@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _19ConnectFour.GameLogic;
+﻿using _19ConnectFour.GameLogic;
 
 namespace _19ConnectFour
 {
@@ -12,7 +7,7 @@ namespace _19ConnectFour
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.gameLoop();
+            game.GameLoop();
         }
     }
 }
