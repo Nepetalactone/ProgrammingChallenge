@@ -11,7 +11,7 @@ namespace _19ConnectFour.GameLogic
         private const SpaceState PlayerTwo = SpaceState.Yellow;
 
         private readonly GameGrid _gameGrid;
-        private readonly UserInterface.IUserInterface _gui;
+        private readonly IUserInterface _gui;
         private SpaceState _currentPlayer;
 
         public Game()

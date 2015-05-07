@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace _00NameGenerator
 {
     class ProbabilityList<T>
     {
         private readonly List<T> _list;
+        private readonly Random _rng;
 
         public ProbabilityList()
         {
+            _rng = new Random();
             _list = new List<T>();
         }
 
@@ -27,8 +30,7 @@ namespace _00NameGenerator
 
         public T GetRandomItem()
         {
-            Random rand = new Random();
-            return _list[rand.Next(_list.Count)];
+            return _list[_rng.Next(_list.Count)];
         }
     }
 }

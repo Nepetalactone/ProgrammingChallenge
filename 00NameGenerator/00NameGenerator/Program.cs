@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace _00NameGenerator
 {
@@ -39,13 +35,11 @@ namespace _00NameGenerator
                 switch (poolChoice)
                 {
                     case 0:
-                        Thread.Sleep(20);
                         generatedName.Append(_vowels.GetRandomItem());
                         poolChoice = 2;
                         break;
 
                     case 1:
-                        Thread.Sleep(20);
                         generatedName.Append(_diphthongs.GetRandomItem());
                         poolChoice = 2;
                         break;
@@ -54,7 +48,6 @@ namespace _00NameGenerator
                     case 3:
                     case 4:
                     case 5:
-                        Thread.Sleep(20);
                         generatedName.Append(_consonants.GetRandomItem());
                         poolChoice = _rng.Next(0, 2);
                         break;
