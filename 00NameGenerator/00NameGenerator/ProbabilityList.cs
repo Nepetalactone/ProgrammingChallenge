@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace _00NameGenerator
 {
@@ -15,9 +14,9 @@ namespace _00NameGenerator
             _list = new List<T>();
         }
 
-        public void Add(T item, Double probability)
+        public void Add(T item, uint probability)
         {
-            for (int i = 0; i < probability * 10; i++)
+            for (int i = 0; i < probability; i++)
             {
                 _list.Add(item);
             }

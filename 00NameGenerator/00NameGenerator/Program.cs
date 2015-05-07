@@ -35,21 +35,24 @@ namespace _00NameGenerator
                 switch (poolChoice)
                 {
                     case 0:
-                        generatedName.Append(_vowels.GetRandomItem());
-                        poolChoice = 2;
-                        break;
-
                     case 1:
-                        generatedName.Append(_diphthongs.GetRandomItem());
-                        poolChoice = 2;
-                        break;
-                    //Give consonants a higher chance to appear
                     case 2:
                     case 3:
+                        generatedName.Append(_vowels.GetRandomItem());
+                        poolChoice = 5;
+                        break;
+
                     case 4:
+                        generatedName.Append(_diphthongs.GetRandomItem());
+                        poolChoice = 5;
+                        break;
+                    //Give consonants a higher chance to appear
                     case 5:
+                    case 6:
+                    case 7:
+                    case 8:
                         generatedName.Append(_consonants.GetRandomItem());
-                        poolChoice = _rng.Next(0, 2);
+                        poolChoice = _rng.Next(0, 5);
                         break;
                 }
             }
@@ -62,11 +65,11 @@ namespace _00NameGenerator
         private static void InitCharLists()
         {
             _vowels = new ProbabilityList<char>();
-            _vowels.Add('a', 8.1);
-            _vowels.Add('e', 12.7);
-            _vowels.Add('i', 6.9);
-            _vowels.Add('o', 7.5);
-            _vowels.Add('u', 2.7);
+            _vowels.Add('a', 81);
+            _vowels.Add('e', 127);
+            _vowels.Add('i', 69);
+            _vowels.Add('o', 75);
+            _vowels.Add('u', 27);
 
             _diphthongs = new ProbabilityList<string>();
             _diphthongs.Add("ai", 20);
@@ -76,27 +79,27 @@ namespace _00NameGenerator
             _diphthongs.Add("ui", 20);
 
             _consonants = new ProbabilityList<char>();
-            _consonants.Add('b', 1.4);
-            _consonants.Add('c', 2.7);
-            _consonants.Add('d', 4.2);
-            _consonants.Add('f', 2.2);
-            _consonants.Add('g', 2.0);
-            _consonants.Add('h', 6.0);
-            _consonants.Add('j', 0.1);
-            _consonants.Add('k', 0.7);
-            _consonants.Add('l', 4.0);
-            _consonants.Add('m', 2.4);
-            _consonants.Add('n', 6.7);
-            _consonants.Add('p', 1.9);
-            _consonants.Add('q', 0.1);
-            _consonants.Add('r', 5.9);
-            _consonants.Add('s', 6.3);
-            _consonants.Add('t', 9.0);
-            _consonants.Add('v', 0.9);
-            _consonants.Add('w', 2.3);
-            _consonants.Add('x', 0.1);
-            _consonants.Add('y', 1.9);
-            _consonants.Add('z', 0.1);
+            _consonants.Add('b', 14);
+            _consonants.Add('c', 27);
+            _consonants.Add('d', 42);
+            _consonants.Add('f', 22);
+            _consonants.Add('g', 20);
+            _consonants.Add('h', 60);
+            _consonants.Add('j', 1);
+            _consonants.Add('k', 07);
+            _consonants.Add('l', 40);
+            _consonants.Add('m', 24);
+            _consonants.Add('n', 67);
+            _consonants.Add('p', 19);
+            _consonants.Add('q', 1);
+            _consonants.Add('r', 59);
+            _consonants.Add('s', 63);
+            _consonants.Add('t', 90);
+            _consonants.Add('v', 9);
+            _consonants.Add('w', 23);
+            _consonants.Add('x', 1);
+            _consonants.Add('y', 19);
+            _consonants.Add('z', 1);
         }
     }
 }
