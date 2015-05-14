@@ -16,3 +16,9 @@ K:\Git\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGene
 K:\Git\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.exe
 K:\Git\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.pdb
 K:\Git\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.csprojResolveAssemblyReference.cache
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.exe.config
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.exe
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.pdb
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.exe
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\bin\Debug\00NameGenerator.pdb
+K:\Git\Github Nepetalactone\ProgrammingChallenge\00NameGenerator\00NameGenerator\obj\Debug\00NameGenerator.csprojResolveAssemblyReference.cache

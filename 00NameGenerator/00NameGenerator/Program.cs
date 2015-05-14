@@ -9,6 +9,7 @@ namespace _00NameGenerator
         private static ProbabilityList<char> _vowels;
         private static ProbabilityList<string> _diphthongs;
         private static ProbabilityList<char> _consonants;
+        private static ProbabilityList<string> _joinedConsonants; 
         private static Random _rng;
 
         private static void Main(string[] args)
@@ -26,7 +27,7 @@ namespace _00NameGenerator
         private static String GenerateName()
         {
             int numOfParts = _rng.Next(3, 6);
-            int poolChoice = _rng.Next(0, 6);
+            int poolChoice = _rng.Next(0, 10);
             StringBuilder generatedName = new StringBuilder();
 
             //Appends an entry from the appropriate letter pool and afterwards changes the pool to choose from 
@@ -39,12 +40,12 @@ namespace _00NameGenerator
                     case 2:
                     case 3:
                         generatedName.Append(_vowels.GetRandomItem());
-                        poolChoice = 5;
+                        poolChoice = _rng.Next(5, 10);
                         break;
 
                     case 4:
                         generatedName.Append(_diphthongs.GetRandomItem());
-                        poolChoice = 5;
+                        poolChoice = _rng.Next(5, 10);
                         break;
                     //Give consonants a higher chance to appear
                     case 5:
@@ -52,6 +53,10 @@ namespace _00NameGenerator
                     case 7:
                     case 8:
                         generatedName.Append(_consonants.GetRandomItem());
+                        poolChoice = _rng.Next(0, 5);
+                        break;
+                    case 9:
+                        generatedName.Append(_joinedConsonants.GetRandomItem());
                         poolChoice = _rng.Next(0, 5);
                         break;
                 }
@@ -72,11 +77,11 @@ namespace _00NameGenerator
             _vowels.Add('u', 27);
 
             _diphthongs = new ProbabilityList<string>();
-            _diphthongs.Add("ai", 20);
-            _diphthongs.Add("au", 20);
-            _diphthongs.Add("eu", 20);
-            _diphthongs.Add("ei", 20);
-            _diphthongs.Add("ui", 20);
+            _diphthongs.Add("ai", 75);
+            _diphthongs.Add("au", 54);
+            _diphthongs.Add("eu", 77);
+            _diphthongs.Add("ei", 98);
+            _diphthongs.Add("ui", 48);
 
             _consonants = new ProbabilityList<char>();
             _consonants.Add('b', 14);
@@ -100,6 +105,24 @@ namespace _00NameGenerator
             _consonants.Add('x', 1);
             _consonants.Add('y', 19);
             _consonants.Add('z', 1);
+
+            //abcdefghijklmnopqrstuvwxyz
+            _joinedConsonants = new ProbabilityList<string>();
+            _joinedConsonants.Add("br", 36);
+            _joinedConsonants.Add("dr", 50);
+            _joinedConsonants.Add("fr", 81);
+            _joinedConsonants.Add("gr", 39);
+            _joinedConsonants.Add("kr", 33);
+            _joinedConsonants.Add("pr", 39);
+            _joinedConsonants.Add("tr", 74);
+            _joinedConsonants.Add("st", 76);
+            _joinedConsonants.Add("str", 70);
+            _joinedConsonants.Add("bl", 27);
+            _joinedConsonants.Add("fl", 31);
+            _joinedConsonants.Add("gl", 30);
+            _joinedConsonants.Add("kl", 23);
+            _joinedConsonants.Add("pl", 29);
+            _joinedConsonants.Add("zl", 20);
         }
     }
 }
