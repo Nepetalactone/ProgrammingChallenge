@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Text;
 
@@ -13,11 +12,11 @@ namespace _09PseudoRandomSentenceGenerator
             String[] text;
             using (WebClient client = new WebClient())
             {
-                text =
-                    new WebClient().DownloadString(@"http://www.gutenberg.org/ebooks/45862.txt.utf-8")
-                        .Replace('.', ' ')
-                        .Replace(',', ' ')
+                text = client.DownloadString(@"http://www.gutenberg.org/ebooks/45862.txt.utf-8")
                         .Replace("  ", " ")
+                        .Replace('\n', ' ')
+                        .Replace('(', ' ')
+                        .Replace(')', ' ')
                         .Split(' ');
             }
             Dictionary<Tuple<String, String>, List<String>> dict = new Dictionary<Tuple<string,string>, List<string>>();
@@ -35,29 +34,23 @@ namespace _09PseudoRandomSentenceGenerator
             StringBuilder randomSentence = new StringBuilder();
 
             Random rng = new Random();
-            int seedNr = rng.Next(0, text.Length - 3);
-            String firstSeed = text[seedNr];
-            String secondSeed = text[seedNr+1];
+            String firstSeed = text[0];
+            String secondSeed = text[1];
 
-            for (int i = 0; i < 6000000; i++)
+            for (int i = 0; i < 600; i++)
             {
                 List<String> tempList = dict[new Tuple<string, string>(firstSeed, secondSeed)];
-                randomSentence.Append(tempList[rng.Next(0, tempList.Count)]).Append(' ');
-                seedNr = rng.Next(0, text.Length - 3);
-                firstSeed = text[seedNr];
-                secondSeed = text[seedNr + 1];
+                string wordToAppend = tempList[rng.Next(0, tempList.Count)];
+                randomSentence.Append(wordToAppend).Append(' ');
+
+                firstSeed = secondSeed;
+                secondSeed = wordToAppend;
 
                 if (i%10 == 0)
                 {
                     randomSentence.Append("\n");
                 }
             }
-
-            using (StreamWriter file = new StreamWriter("text.txt"))
-            {
-                file.Write(randomSentence.ToString());
-            }
-
             Console.WriteLine(randomSentence);
             Console.ReadKey();
         }
