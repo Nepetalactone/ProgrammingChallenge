@@ -5,7 +5,6 @@ namespace _00NameGenerator
 {
     class Program
     {
-
         private static ProbabilityList<char> _vowels;
         private static ProbabilityList<string> _diphthongs;
         private static ProbabilityList<char> _consonants;
@@ -18,7 +17,7 @@ namespace _00NameGenerator
             _rng = new Random();
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(GenerateName() + Environment.NewLine);
+                Console.WriteLine(GenerateName());
             }
 
             Console.ReadKey();
@@ -106,7 +105,6 @@ namespace _00NameGenerator
             _consonants.Add('y', 19);
             _consonants.Add('z', 1);
 
-            //abcdefghijklmnopqrstuvwxyz
             _joinedConsonants = new ProbabilityList<string>();
             _joinedConsonants.Add("br", 36);
             _joinedConsonants.Add("dr", 50);

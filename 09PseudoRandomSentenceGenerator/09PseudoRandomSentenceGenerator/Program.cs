@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _09PseudoRandomSentenceGenerator
 {
@@ -40,13 +39,23 @@ namespace _09PseudoRandomSentenceGenerator
             String firstSeed = text[seedNr];
             String secondSeed = text[seedNr+1];
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 6000000; i++)
             {
                 List<String> tempList = dict[new Tuple<string, string>(firstSeed, secondSeed)];
                 randomSentence.Append(tempList[rng.Next(0, tempList.Count)]).Append(' ');
                 seedNr = rng.Next(0, text.Length - 3);
                 firstSeed = text[seedNr];
                 secondSeed = text[seedNr + 1];
+
+                if (i%10 == 0)
+                {
+                    randomSentence.Append("\n");
+                }
+            }
+
+            using (StreamWriter file = new StreamWriter("text.txt"))
+            {
+                file.Write(randomSentence.ToString());
             }
 
             Console.WriteLine(randomSentence);
