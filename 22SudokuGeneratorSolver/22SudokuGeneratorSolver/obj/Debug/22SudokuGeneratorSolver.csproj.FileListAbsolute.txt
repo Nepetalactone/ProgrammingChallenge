@@ -1,6 +1,0 @@
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\bin\Debug\22SudokuGeneratorSolver.exe.config
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\bin\Debug\22SudokuGeneratorSolver.exe
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\bin\Debug\22SudokuGeneratorSolver.pdb
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\obj\Debug\22SudokuGeneratorSolver.csprojResolveAssemblyReference.cache
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\obj\Debug\22SudokuGeneratorSolver.exe
-I:\Documents\22SudokuGeneratorSolver\22SudokuGeneratorSolver\obj\Debug\22SudokuGeneratorSolver.pdb

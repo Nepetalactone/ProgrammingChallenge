@@ -1,6 +1,0 @@
-I:\Documents\20BMICalculator\20BMICalculator\bin\Debug\20BMICalculator.exe.config
-I:\Documents\20BMICalculator\20BMICalculator\bin\Debug\20BMICalculator.exe
-I:\Documents\20BMICalculator\20BMICalculator\bin\Debug\20BMICalculator.pdb
-I:\Documents\20BMICalculator\20BMICalculator\obj\Debug\20BMICalculator.csprojResolveAssemblyReference.cache
-I:\Documents\20BMICalculator\20BMICalculator\obj\Debug\20BMICalculator.exe
-I:\Documents\20BMICalculator\20BMICalculator\obj\Debug\20BMICalculator.pdb

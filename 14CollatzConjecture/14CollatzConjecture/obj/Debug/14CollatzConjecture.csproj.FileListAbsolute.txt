@@ -1,6 +1,0 @@
-I:\Documents\14CollatzConjecture\14CollatzConjecture\bin\Debug\14CollatzConjecture.exe.config
-I:\Documents\14CollatzConjecture\14CollatzConjecture\bin\Debug\14CollatzConjecture.exe
-I:\Documents\14CollatzConjecture\14CollatzConjecture\bin\Debug\14CollatzConjecture.pdb
-I:\Documents\14CollatzConjecture\14CollatzConjecture\obj\Debug\14CollatzConjecture.csprojResolveAssemblyReference.cache
-I:\Documents\14CollatzConjecture\14CollatzConjecture\obj\Debug\14CollatzConjecture.exe
-I:\Documents\14CollatzConjecture\14CollatzConjecture\obj\Debug\14CollatzConjecture.pdb

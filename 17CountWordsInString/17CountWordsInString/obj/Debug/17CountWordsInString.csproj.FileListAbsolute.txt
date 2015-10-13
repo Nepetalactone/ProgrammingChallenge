@@ -1,5 +1,0 @@
-I:\Documents\17CountWordsInString\17CountWordsInString\bin\Debug\17CountWordsInString.exe.config
-I:\Documents\17CountWordsInString\17CountWordsInString\bin\Debug\17CountWordsInString.exe
-I:\Documents\17CountWordsInString\17CountWordsInString\bin\Debug\17CountWordsInString.pdb
-I:\Documents\17CountWordsInString\17CountWordsInString\obj\Debug\17CountWordsInString.exe
-I:\Documents\17CountWordsInString\17CountWordsInString\obj\Debug\17CountWordsInString.pdb

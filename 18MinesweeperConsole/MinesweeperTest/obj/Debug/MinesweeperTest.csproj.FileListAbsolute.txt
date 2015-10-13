@@ -1,1 +1,0 @@
-I:\Documents\18MinesweeperConsole\MinesweeperTest\obj\Debug\MinesweeperTest.csprojResolveAssemblyReference.cache

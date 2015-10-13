@@ -1,6 +1,0 @@
-I:\Documents\02TemperatureConverter\02TemperatureConverter\bin\Debug\02TemperatureConverter.exe.config
-I:\Documents\02TemperatureConverter\02TemperatureConverter\bin\Debug\02TemperatureConverter.exe
-I:\Documents\02TemperatureConverter\02TemperatureConverter\bin\Debug\02TemperatureConverter.pdb
-I:\Documents\02TemperatureConverter\02TemperatureConverter\obj\Debug\02TemperatureConverter.csprojResolveAssemblyReference.cache
-I:\Documents\02TemperatureConverter\02TemperatureConverter\obj\Debug\02TemperatureConverter.exe
-I:\Documents\02TemperatureConverter\02TemperatureConverter\obj\Debug\02TemperatureConverter.pdb

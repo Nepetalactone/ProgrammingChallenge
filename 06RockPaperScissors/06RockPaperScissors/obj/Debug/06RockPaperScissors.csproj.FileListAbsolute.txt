@@ -1,6 +1,0 @@
-I:\Documents\06RockPaperScissors\06RockPaperScissors\bin\Debug\06RockPaperScissors.exe.config
-I:\Documents\06RockPaperScissors\06RockPaperScissors\bin\Debug\06RockPaperScissors.exe
-I:\Documents\06RockPaperScissors\06RockPaperScissors\bin\Debug\06RockPaperScissors.pdb
-I:\Documents\06RockPaperScissors\06RockPaperScissors\obj\Debug\06RockPaperScissors.csprojResolveAssemblyReference.cache
-I:\Documents\06RockPaperScissors\06RockPaperScissors\obj\Debug\06RockPaperScissors.exe
-I:\Documents\06RockPaperScissors\06RockPaperScissors\obj\Debug\06RockPaperScissors.pdb

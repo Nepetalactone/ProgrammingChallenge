@@ -1,5 +1,0 @@
-I:\Documents\04EncryptDecrypt\04EncryptDecrypt\bin\Debug\04EncryptDecrypt.exe.config
-I:\Documents\04EncryptDecrypt\04EncryptDecrypt\bin\Debug\04EncryptDecrypt.exe
-I:\Documents\04EncryptDecrypt\04EncryptDecrypt\bin\Debug\04EncryptDecrypt.pdb
-I:\Documents\04EncryptDecrypt\04EncryptDecrypt\obj\Debug\04EncryptDecrypt.exe
-I:\Documents\04EncryptDecrypt\04EncryptDecrypt\obj\Debug\04EncryptDecrypt.pdb

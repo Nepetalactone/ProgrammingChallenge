@@ -1,6 +1,0 @@
-I:\Documents\11TimeFromWeb\11TimeFromWeb\bin\Debug\11TimeFromWeb.exe.config
-I:\Documents\11TimeFromWeb\11TimeFromWeb\bin\Debug\11TimeFromWeb.exe
-I:\Documents\11TimeFromWeb\11TimeFromWeb\bin\Debug\11TimeFromWeb.pdb
-I:\Documents\11TimeFromWeb\11TimeFromWeb\obj\Debug\11TimeFromWeb.csprojResolveAssemblyReference.cache
-I:\Documents\11TimeFromWeb\11TimeFromWeb\obj\Debug\11TimeFromWeb.exe
-I:\Documents\11TimeFromWeb\11TimeFromWeb\obj\Debug\11TimeFromWeb.pdb
